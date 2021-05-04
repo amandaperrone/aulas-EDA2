@@ -71,20 +71,30 @@ def dijkstra(grafo, inicio):
 
 g = Grafo()
 
-g.adiciona_aresta("S", "A", 1)
-g.adiciona_aresta("S", "B", 5)
-g.adiciona_aresta("A", "B", 2)
-g.adiciona_aresta("A", "C", 2)
-g.adiciona_aresta("A", "D", 1)
-g.adiciona_aresta("B", "D", 2)
-g.adiciona_aresta("C", "D", 3)
-g.adiciona_aresta("C", "E", 1)
-g.adiciona_aresta("D", "E", 2)
+g.adiciona_aresta("S", "A", 8)
+g.adiciona_aresta("A", "B", 4)
+g.adiciona_aresta("A", "C", 5)
+g.adiciona_aresta("A", "D", 8)
+g.adiciona_aresta("D", "E", 8)
+g.adiciona_aresta("D", "G", 4)
+g.adiciona_aresta("D", "H", 4)
+g.adiciona_aresta("E", "G", 1)
+g.adiciona_aresta("E", "F", 6)
 
-print(g.vertices)
-print(g.arestas)
-print(g.pesos)
+
+# print(g.vertices)
+# print(g.arestas)
+# print(g.pesos)
 
 distancias = dijkstra(g, 'S')
 
 print(distancias)
+
+pressaoInicial = 0
+
+for v in g.vertices:
+    if (distancias[v] > pressaoInicial):
+        pressaoInicial = distancias[v]
+
+print(pressaoInicial, "eh a pressao inicial minima.")
+

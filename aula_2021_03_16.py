@@ -1,4 +1,4 @@
-# returnar o caminho entre A e os vértices
+# retornar o caminho entre A e os vértices
 
 def BFS(G, s):
     visitadosT= [s]
